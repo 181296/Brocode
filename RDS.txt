@@ -1,0 +1,13 @@
+=====================================================
+Create RDS:
+
+* Select RDS from AWS Service.
+* Select Create Database-> Easy create-> Any database(MySql)-> Free Tier.
+* Change DB identifier(optional)-> UserName-> password(*remembered it*) -> save it
+* VCP Security group-> inbound rules->  add MYSQL/Aurora(3306, anywhere)->save it
+* Modify database-> goto Connectivity-> Additional configuration-> Yes.
+* Open Workbench-> create new connection ->Connection Name(optional) ->hostname(RDS EndPoint&Port)-> password ->testConnection
+* create new database-> create table or import createfile to add table.
+
+=====================================================
+
