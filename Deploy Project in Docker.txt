@@ -1,0 +1,32 @@
+===================================================================================================================
+Docker
+
+- EC2 instance
+* Create EC2 instance.
+* In EC2 check checkbox-> Action-> Security-> modify IAM roles-> change IAM role to EMR-EC2-defaultrole -> saveit.
+* In EC2 security-> inbound(edit)-> add customTCP(8080,anywhere)-> add HTTP(80,anywhere)-> saveit. 					   
+
+- S3 bucket(If not created)
+* Create S3 bucket-> Name-> region(east-varginia)-> uncheck block to access all public -> saveit.
+* Create folder-> Name(for context file)-> upload contextfile-> make public-> save it.
+* Create folder-> Name(for war file)-> upload .warfile-> make public-> save it.  
+
+- create connection with EC2
+* in SSH client-> copy example-> paste in cmd(open cmd where .pem key is stored)-> paste example.
+* sudo su
+* sudo yum update -y
+* sudo amazon-linux-extras install docker
+* sudo service docker start
+* sudo usermod -a -G docker ec2-user
+* sudo docker info
+* vi Docker
+* paste file Docker from desktop(make conventional changes)-> context file(paste url of S3)-> .war file(paste url of S3)-> save it.
+* docker build -t <new_file_name>(eg: hello-world) .
+* docker run -t -i -p 8080:8080 hello-world
+* copy IPv4 address-> open new tab and paste-> /<project_name>
+
+					(: Your Will RUN :)
+==========================================================================================================
+
+
+
